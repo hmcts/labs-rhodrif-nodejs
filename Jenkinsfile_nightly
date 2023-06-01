@@ -12,7 +12,7 @@ def product = "labs"
 def component = "rhodrif-nodejs"
 
 withNightlyPipeline(type, product, component) {
-  after('build') {
+  afterSuccess('build') {
     yarnBuilder.yarn('build')
   }
 }
